@@ -29,6 +29,8 @@ These packages don't have subpackages: `data_access`, `entity`, `view`, and
 `app`.
 
 **Thought question:** Why don't these have use-case-specific subpackages?
+A: they are not tied to a specific use case so that means that they are used across the entire
+application. 
 
 ## A note on English: 2-word verb phrases vs. 1-word nouns
 
@@ -61,6 +63,9 @@ Now compare `LoginInteractor` and `SignupInteractor` side by side. (You can drag
 tabs around if you like.)
 
 **Thought question:** Why doesn't the `LoginInteractor` have a `UserFactory`?
+A: LoginInteractor does not generate new users, so it doesn't need to add to 
+UserFactory while SignUp adds a new user to the UserFactory every single
+time a new user signs up. 
 
 #### Remnants of a bug
 
@@ -79,6 +84,7 @@ obvious what was causing it, even when we used the debugger. We isolated the bug
 
 **Thought question:** Which version do you find easier to understand, the Signup
 one or the Login one?
+A: Login. 
 
 **Thought question:** Maybe the problem is with the debugging tools, maybe the
 IDE doesn't allow easy exploration of expressions?
@@ -86,7 +92,7 @@ IDE doesn't allow easy exploration of expressions?
 ### Interactor assets
 
 Each Interactor has an InputBoundary, InputData, OutputBoundary, and
-OutpuData. They're all quite short. Compare them.
+OutputData. They're all quite short. Compare them.
 
 ## Data Access Object
 
@@ -95,6 +101,7 @@ lab: it has one more method. This is because it implements an interface,
 `LoginUserDataAccessInterface`.
 
 **Thought question:** What is the method that was added?
+A: Get User Username. 
 
 ## Adding a use case interaction [for credit]
 
